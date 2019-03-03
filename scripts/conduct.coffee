@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   hubot !conduct - Remind the channel about the devICT code of conduct
+#   hubot !conduct - Remind the channel about the D4D code of conduct
 #   hubot !docs - list important documents
 #   hubot !project idea - Steps to getting a new project started
 

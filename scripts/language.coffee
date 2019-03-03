@@ -12,16 +12,6 @@
 
 module.exports = (robot) ->
 
-  greeting = ['Welcome', 'Hello', 'Hi there']
-
-  robot.hear /hello/i, (res) ->
-    res.send res.random greeting
-
-
-
-  # robot.enter (res) ->
-  #   res.send "https://github.com/Data4Democracy/read-this-first"
-
   r = ['R project' , ' another R project']
   python = 'https://github.com/Data4Democracy?utf8=%E2%9C%93&q=&type=&language=python'
   jupyter = 'https://github.com/Data4Democracy?language=jupyter+notebook'

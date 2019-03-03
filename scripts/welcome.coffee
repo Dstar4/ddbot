@@ -16,6 +16,8 @@ module.exports = (robot) ->
     stepTwo ="Once you've done that, you have a few options: - Introduce yourself! We love meeting new people.```<TODO: instructions for introducing yourself>``` - Got questions? No problem! ```<TODO: instructions for asking questions/reaching out to ambassadors>``` - Ready to help out with one of our ongoing projects? ```<TODO: instructions for finding and joining a project>``` - Want to start your own project? ```<TODO: instructions for pitching your own project to the community>``` In the meantime, here are some resources you might find useful: ```- DataBot is always around and here to help! Message @DataBot with 'help' to see a list of all the things it can do for you.```"
     greeting = ['Hello', 'Hey', 'Greetings']
     room = robot.adapter.client.rtm.dataStore.getDMByName res.message.user.name
-    robot.messageRoom room.id, (res.random greeting) + enterReply
-    robot.messageRoom room.id, stepTwo
+    setTimeout () ->
+      robot.messageRoom room.id, (res.random greeting) + enterReply
+      robot.messageRoom room.id, stepTwo
+    , 1000
 

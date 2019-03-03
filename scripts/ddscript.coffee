@@ -1,3 +1,14 @@
+# Description:
+#   To introduce projects to new members
+#
+# Dependencies:
+#   None
+#
+# Configuration:
+#   None
+#
+# Commands:
+#   hubot project - links to projects filtered by language
 
 module.exports = (robot) ->
 
@@ -17,9 +28,10 @@ module.exports = (robot) ->
   jupyter = 'https://github.com/Data4Democracy?language=jupyter+notebook'
   javascript = 'Javascript Project'
 
+
   robot.hear /project/i, (res) ->
     res.send 'What language do you prefer?'
-    robot.hear /(.*)/i, (res) ->
+    robot.respond /(.*)/i, (res) ->
       language = res.match[1].toLowerCase()
       if language is "python"
         res.send python
@@ -29,6 +41,7 @@ module.exports = (robot) ->
         res.send javascript
       if language is 'jupyter'
         res.send jupyter
+
 
 
 

@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   hubot project - links to projects filtered by language
+#   hubot !language - links to projects filtered by language
 
 module.exports = (robot) ->
 
@@ -17,11 +17,10 @@ module.exports = (robot) ->
   robot.hear /hello/i, (res) ->
     res.send res.random greeting
 
-  robot.hear /!docs/i, (res) ->
-    res.send "https://github.com/Data4Democracy/read-this-first"
 
-  robot.enter (res) ->
-    res.send "https://github.com/Data4Democracy/read-this-first"
+
+  # robot.enter (res) ->
+  #   res.send "https://github.com/Data4Democracy/read-this-first"
 
   r = ['R project' , ' another R project']
   python = 'https://github.com/Data4Democracy?utf8=%E2%9C%93&q=&type=&language=python'
@@ -29,8 +28,8 @@ module.exports = (robot) ->
   javascript = 'Javascript Project'
 
 
-  robot.hear /project/i, (res) ->
-    res.send 'What language do you prefer?'
+  robot.hear /!language/i, (res) ->
+    res.send 'What programming language do you prefer?'
     robot.respond /(.*)/i, (res) ->
       language = res.match[1].toLowerCase()
       if language is "python"

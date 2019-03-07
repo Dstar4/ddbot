@@ -10,8 +10,9 @@
 # Commands:
 #   hubot !conduct - Remind the channel about the D4D code of conduct
 #   hubot !docs - list important documents
-#   hubot !project idea - Steps to getting a new project started
-
+#   hubot !idea - Steps to getting a new project started
+#   hubot !person - Reach out to a D4D ambassador
+#   hubot !new project
 module.exports = (robot) ->
   robot.hear /!conduct/i, (res) ->
     res.send "https://github.com/Data4Democracy/read-this-first/blob/master/Code-of-Conduct.md"
@@ -19,5 +20,11 @@ module.exports = (robot) ->
   robot.hear /!docs/i, (res) ->
     res.send "https://github.com/Data4Democracy/read-this-first"
 
-  robot.hear /!project idea/i, (res) ->
+  robot.hear /!idea/i, (res) ->
     res.send "https://github.com/Data4Democracy/project-ideas"
+  person = ['person 1' , 'person 2' , 'person 3']
+  robot.hear /!person/i, (res) ->
+    res.send person.toString()
+
+  robot.hear /!new project/i, (res) ->
+    res.send "https://github.com/Data4Democracy/read-this-first/blob/master/new-project-template.md"

@@ -35,7 +35,8 @@ module.exports = (robot) ->
     res.send "https://github.com/Data4Democracy/read-this-first/blob/master/example_lead_routine.md"
 
   robot.hear /!feedback/i, (res) ->
-    res.send "feedback instructions"
+    res.send "Please leave feedback for anything related to the bot in a github issue inside the bot repository."
+    res.send "Link to bot repo"
 
   robot.hear /!nonprofit/i, (res) ->
     res.send "Data for Democracy applied for independent non-profit status in early 2018 and receives grant funds and donations through its fiscal sponsor, The Hopewell Fund. We have recently convened a community body to seek board members. If you are interested, please email team@datafordemocracy.org"
